@@ -11,7 +11,7 @@ class StudentTest {
     Student s;
     @BeforeEach
     void init(){
-        s = new Student("6710405273", "Test");
+        s = new Student("6710405273", "Test", 0.0);
     }
 
     @Test
@@ -41,5 +41,13 @@ class StudentTest {
     @Test
     void testIsNameContains(){
         assertTrue(s.isNameContains("est"));
+    }
+
+    @Test
+    void testToString() {
+        String expected = "{id: '6710405273', name: 'Test', score: 0.0}";
+        String actual = s.toString();
+
+        assertEquals(expected, actual);
     }
 }
